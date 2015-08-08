@@ -36,20 +36,33 @@ Please confirm the password by entering it again:
 
 ...enter it again :-)
 
-## Syncing up
+## Your First Account
 
 It will pause shortly while it figures out your network environment and starts it all up. After a little while, you'll see some information on the software as well as on the account it created for you.
 
-This is your newly created default account (or 'identity'. I use the words interchangeably). In my case, it was the account that begins with `XE712F44`. This is an *ICAP code*, similar to an IBAN code that you might have used when doing banking transfers. You and only you have the special *secret* key for this account. It's guarded by the password you just typed. Don't ever tell anyone your password or they'll be able to send ether from this account or otherwise use it for nefarious means.
+This is your newly created default account (or 'identity'. I use the words interchangeably). In my case, it was the account that begins with `XE712F44`. This is an *ICAP code*, similar to an IBAN code that you might have used when doing banking transfers. You and only you have the special *secret key* for this account. It's guarded by the password you just typed. Don't ever tell anyone your password or they'll be able to send ether from this account or otherwise use it for nefarious means.
 
 ```
 Transaction Signer: XE712F44QOZBKNLD20DLAEE8O2YJ7XRGP4 (be5af9b0-9917-b9bc-8f95-65cb9f042052 - 0093503f)
 Mining Beneficiary: XE712F44QOZBKNLD20DLAEE8O2YJ7XRGP4 (be5af9b0-9917-b9bc-8f95-65cb9f042052 - 0093503f)
 ```
 
-`eth` is nice. It tells you that if you mine successfully with the inbuilt miner, the proceeds will go into your account beginning with `XE712F44`. Similarly by default, any transactions you do will come from the same account.
+`eth` is nice. It tells you that any transactions you do will come from your account beginning with `XE712F44`. Similarly by default, if you mine successfully with the inbuilt miner, the proceeds will go into the same account.
 
-You'll notice that there are two other codes parenthesised. The first is the UUID of the account. This is a code, only used locally, which allows you to identify which file the key is stored in. This is so that the key can be identified without giving any any information of what account the key is for.
+You'll notice that there are two other codes parenthesised. The first is the *UUID* of the key. This is a code, only used locally, which allows you to identify which file the key is stored in. This is so that the key can be identified without giving any any information of what account the key is for. In this case, the UUID begins with `be5af9b0`. You should check that you have the file in question!
 
-You'll see a little bit of information as it tries to connect to the network.
+If you're using Linux or MacOS, open another terminal and navigate to `~/.web3/keys`. This is where all of your keys are stored! Enter `ls` and make sure there's a file that corresponds to the account's UUID. If there isn't something is terribly wrong! Get yourself on the forums and ask before going any further. For Windows users, just navigate into your home folder's AppData/Web3/keys directory (you might need to enable Show Hidden Files to get there.
 
+The second piece of information that is parenthesised is the first few digits of the hex key. Older clients and Ethereum software depend on this to identify accounts. It's worse because it's longer and doesn't have any way of determining if an address is invalid.
+
+# Syncing up
+
+You'll see a little bit of information as it tries to connect to the network. You might see a line like:
+
+```
+18:25:31|p2p  Hello: ++eth-v0.9.40-727666c2/EthDEV Server Frontier//RelWithDebInfo-Linux/g++/JIT V[ 4 ] ##979b7fa2… (eth,61) 30303
+```
+
+This is it telling you that it's managed to contact another node.
+
+After a little while it will begin to synchronise to the network.
