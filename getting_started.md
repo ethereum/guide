@@ -38,12 +38,18 @@ Please confirm the password by entering it again:
 
 ## Syncing up
 
-It will pause shortly while it figures out your network environment and starts it all up. After a little while, you'll see some information on the software as well as on the account it created for you. This is your default account. In my case, it was the account beginning with 
+It will pause shortly while it figures out your network environment and starts it all up. After a little while, you'll see some information on the software as well as on the account it created for you.
+
+This is your newly created default account (or 'identity'. I use the words interchangeably). In my case, it was the account that begins with `XE712F44`. This is an *ICAP code*, similar to an IBAN code that you might have used when doing banking transfers. You and only you have the special *secret* key for this account. It's guarded by the password you just typed. Don't ever tell anyone your password or they'll be able to send ether from this account or otherwise use it for nefarious means.
 
 ```
-Transaction Signer: XE87426PPQPBJL09FUH1UH3MPAKQKEL82N (00f73494)
-Mining Benefactor: XE87426PPQPBJL09FUH1UH3MPAKQKEL82N (00f73494)
+Transaction Signer: XE712F44QOZBKNLD20DLAEE8O2YJ7XRGP4 (be5af9b0-9917-b9bc-8f95-65cb9f042052 - 0093503f)
+Mining Beneficiary: XE712F44QOZBKNLD20DLAEE8O2YJ7XRGP4 (be5af9b0-9917-b9bc-8f95-65cb9f042052 - 0093503f)
 ```
 
-After you've given a password, you'll see a little bit of information as it tries to connect to the network.
+`eth` is nice. It tells you that if you mine successfully with the inbuilt miner, the proceeds will go into your account beginning with `XE712F44`. Similarly by default, any transactions you do will come from the same account.
+
+You'll notice that there are two other codes parenthesised. The first is the UUID of the account. This is a code, only used locally, which allows you to identify which file the key is stored in. This is so that the key can be identified without giving any any information of what account the key is for.
+
+You'll see a little bit of information as it tries to connect to the network.
 
