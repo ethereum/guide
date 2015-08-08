@@ -2,5 +2,5 @@
 
 * [Introduction](README.md)
 * [Installation](chapter1.md)
-* Getting started: eth
+* Getting started
 
