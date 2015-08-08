@@ -13,7 +13,7 @@ The full software suite of TurboEthereum includes:
 - `ethminer` A standalone miner. This can be used to check how fast you can mine and will mine for you in concert with `eth`, `geth` and `pyethereum`.
 - `ethconsole` A remote shell for `eth`. It connects to a running `eth` instance and gives the web3 Javascript console that can be used to administrate it, as well as mine, make transactions and inspect the blockchain.
 - `ethvm` The Ethereum virtual machine emulator. You can use this to run EVM code.
-- `solc` The Solidity compiler. You can use this to compile Solidity programms
+- `solc` The Solidity compiler. You can use this to compile Solidity programs
 - `sc` The Serpent compiler.
 - `lllc` The LLL compiler.
 - `rlp` An RLP serialisation/deserialisation tool.
