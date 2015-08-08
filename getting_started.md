@@ -20,10 +20,30 @@ Beware. You're entering the Frontier!
 
 ## Setting up an account
 
-After this information, the first thing it will do is ask you for a master password. This is a password that acts 
+After this information, the first thing it will do is ask you for a master password.
 
+```
+Please enter a MASTER password to protect your key store (make it strong!):
+```
 
-##
+The master password is a password that protects your privacy and acts as a default security measure for your various Ethereum identities. Even with access to your computer nobody can work out who your online Ethereum addresses are without this password. It's also a default security password for your other keys, if you don't want to be remembering too many password. Anyway, it's the first line of defence and aught to be strong.
 
-You'll see a little bit of information as it tries to connect to the network.
+Enter a password, preferably taking into account [sage advice on password creation](https://xkcd.com/936/). Then when it asks for a confirmation...
+
+```
+Please confirm the password by entering it again: 
+```
+
+...enter it again :-)
+
+## Syncing up
+
+It will pause shortly while it figures out your network environment and starts it all up. After a little while, you'll see some information on the software as well as on the account it created for you. This is your default account. In my case, it was the account beginning with 
+
+```
+Transaction Signer: XE87426PPQPBJL09FUH1UH3MPAKQKEL82N (00f73494)
+Mining Benefactor: XE87426PPQPBJL09FUH1UH3MPAKQKEL82N (00f73494)
+```
+
+After you've given a password, you'll see a little bit of information as it tries to connect to the network.
 
