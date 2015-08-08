@@ -4,19 +4,20 @@ Installation is a different process dependent on which platform you run. At pres
 
 **Note: cpp-ethereum is still in beta, Please file an [issue](https://github.com/ethereum/cpp-ethereum/issues) if you have problems with installing. Tests are done on all clients, but developers tend to use Ubuntu and Mac OS more than Windows, so they're likely to work a bit better.**
 
-The full software suite of cpp-ethereum includes:
+The full software suite of TurboEthereum includes:
 
-- `alethzero` ("AlethZero") The mainline analytical graphical user interface.
-- `eth` The mainline CLI Ethereum client.
-- `ethkey` A key/wallet management tool for Ethereum keys, allows CWD-friendly transaction inspection and signing, too.
-- `ethminer` A standalone miner than can work in concert with `eth`, `geth` and `pyethereum`.
-- `ethconsole` Connects to a running `eth` instance and gives the web3 Javascript console that can be used to administrate it, remotely.
-- `solc` The Solidity compiler.
+- **AlethZero** (`alethzero`) The mainline GUI Ethereum client. It connects and syncs to the Ethereum network and lets you mine, make transactions, run DApps and inspect the blockchain.
+- **++eth** (`eth`) The mainline CLI Ethereum client. Run it in the background and it will connect to the Ethereum network; you can mine, make transactions and inspect the blockchain.
+- **Mix** (`mix`) The integrated development environment for DApp authoring. Quickly prototype and debug decentralised applications on the Ethereum platform.
+- `ethkey` A key/wallet management tool for Ethereum keys. This lets you add, remove and change your keys as well as *cold wallet device*-friendly transaction inspection and signing.
+- `ethminer` A standalone miner. This can be used to check how fast you can mine and will mine for you in concert with `eth`, `geth` and `pyethereum`.
+- `ethconsole` A remote shell for `eth`. It connects to a running `eth` instance and gives the web3 Javascript console that can be used to administrate it, as well as mine, make transactions and inspect the blockchain.
+- `ethvm` The Ethereum virtual machine emulator. You can use this to run EVM code.
+- `solc` The Solidity compiler. You can use this to compile Solidity programms
 - `sc` The Serpent compiler.
 - `lllc` The LLL compiler.
 - `rlp` An RLP serialisation/deserialisation tool.
 - `abi` An ABI encoding/decoding tool.
-- `mix` ("Mix") The Integrated Development Environment.
 
 # Installing on Ubuntu 14.04 and later (64-bit)
 
