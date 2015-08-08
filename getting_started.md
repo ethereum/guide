@@ -51,7 +51,7 @@ Mining Beneficiary: XE712F44QOZBKNLD20DLAEE8O2YJ7XRGP4 (be5af9b0-9917-b9bc-8f95-
 
 You'll notice that there are two other codes in parentheses. The first is the *UUID* of the key. This is a code, only used on your computer, which allows us to identify which file the key is stored in without giving any any information of what account the key is for. In this case, the UUID begins with `be5af9b0`. Let's check that you do indeed have the key file for this account!
 
-# Find that Key!
+## Find that Key!
 
 If you're using Linux or MacOS, open another terminal and navigate to `~/.web3/keys`. This is where all of your keys are stored. Enter `ls` and make sure there's a file that corresponds to the account's UUID. 
 
@@ -61,7 +61,7 @@ If you don't find a file with the same name as the UUID, then something is terri
 
 The second piece of information that is parenthesised is the first few digits of the hex key. Older clients and Ethereum software depend on this to identify accounts. We don't use it any more because it's longer and doesn't have any way of determining if an address is invalid, so errors with mistyping can easily have major consequences.
 
-# Syncing up
+## Syncing up
 
 You'll now start seeing a little bit of information as it tries to connect to the network. You might see a line like:
 
@@ -96,6 +96,34 @@ You'll end up with something like:
 > web3.eth.blockNumber
 11254
 ```
+
+## Got ETH?
+
+You can easily check to see if you have ether in your account using the `eth.getBalance` function of `web3`. For this to work you'll need the address of which to get the balance. In my case, the address is the aforementioned `XE712F44QOZBKNLD20DLAEE8O2YJ7XRGP4`:
+
+```
+> web3.eth.getBalance("XE712F44QOZBKNLD20DLAEE8O2YJ7XRGP4")
+0
+```
+
+That's not much, but then it is after all a newly cerated account. Let's query the balance of an account that actually has some funds, the Ethereum Foundation wallet:
+
+```
+> web3.eth.getBalance("XE86PXQKKKORDZQ1RWT9LGUGYZ1U57A56Y2")
+11901464239480000000000000
+```
+
+Ooh, rather a lot more. The answer is given in Wei, the lowest denomination of ether. To work out what this is in sensible terms, use `web3.fromWei` and provide a sensible unit, e.g. `grand` (a grand, for those unfamiliar with English slang, is one thousand Ether):
+
+```
+> web3.fromWei(web3.eth.getBalance("de0b295669a9fd93d5f28d9ec85e40f4cb697bae"), 'grand')
+11901.46423948
+```
+
+Wow that's nearly 12 million ether.
+
+
+## And Finally...
 
 Aside from the full power of Javascript, there are loads of functions you can use in the console; to see them just type `web3`.
 
