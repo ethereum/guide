@@ -24,20 +24,19 @@ While the client is running you can interact with it using the [interactive cons
 
 ## Mining on multiple GPUs
 
-Mining with multiple GPUs and eth is very similar to mining with [geth and multiple GPUs](http://ethereum.gitbooks.io/frontier-guide/content/gpu.html#gpu-mining-with-ethminer). 
+Mining with multiple GPUs and `eth++` is very similar to mining with [geth and multiple GPUs](http://ethereum.gitbooks.io/frontier-guide/content/gpu.html#gpu-mining-with-ethminer). 
 
-1. Ensure that an eth++ node is running with your address properly set:
+1. Ensure that an eth++ node is running with your coinbase address properly set:
  ```
  eth -b -i --frontier -v 1 -a 0xcadb3223d4eebcaa7b40ec5722967ced01cfc8f2  --client-name "OPTIONALNAMEHERE" -x 50 -j
  ```
  Notice that we also added the `-j` argument so that the client can have the JSON-RPC server enabled to communicate with the ethminer instances. Additionally we removed the mining related arguments since `ethminer` will now do the mining for us.
  
-2. For each of your GPUs execute a different ethminer instance
+2. For each of your GPUs execute a different ethminer instance:
  ```
  ethminer --no-precompute -G  --opencl-device XX  
  ```
- Where `XX` is an index number corresponding to the openCL device you want the ethminer to use.
- 
+ Where `XX` is an index number corresponding to the openCL device you want the ethminer to use. 
  
  In order to easily get a list of OpenCL devices you can execute `eth --list-devices` which will
  provide a list of all devices OpenCL can detect, with also some additional information per device. Below is a sample output:
@@ -49,3 +48,4 @@ Mining with multiple GPUs and eth is very similar to mining with [geth and multi
         CL_DEVICE_MAX_WORK_GROUP_SIZE: 1024
 
  ```
+ Finally the `--no-precompute` argument requests that the ethminers don't create the [DAG](https://github.com/ethereum/wiki/wiki/Ethash-DAG) of the next epoch ahead of time.
