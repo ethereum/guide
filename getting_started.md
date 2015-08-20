@@ -127,7 +127,7 @@ Wow that's nearly 12 million ether.
 
 Aside from the full power of Javascript, there are loads of functions you can use in the console; to see them just type `web3`.
 
-When you're done playing, simply type `quit` to exit `eth`.
+When you're done playing, simply type `exit` to exit `eth`.
 
 
 
