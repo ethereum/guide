@@ -4,5 +4,5 @@
 * [Installation](chapter1.md)
 * [Getting started](getting_started.md)
 * [Mining](mining.md)
-* Interactive Console
+* [Interactive Console](interactive_console.md)
 
