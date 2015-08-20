@@ -20,4 +20,4 @@ In order to mine on a single GPU all that needs to be done is run eth++ with the
 - `-m on` Actually launch with mining on.
 - `-G` set GPU mining on.
 
-While the client is running you can interact with it using the 
+While the client is running you can interact with it using the [console](interactive_console.md)
