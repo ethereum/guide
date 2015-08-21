@@ -20,7 +20,7 @@ So, if you encounter this bug, and before you do anything else, go to "Software 
 
 Once rebooted, it's well worth having a check that the drivers have now indeed been installed correctly.
 
-Whatever you do, if you are on 14.04.02 do not alter the drivers or the drivers configuration once set. For example, the usage of aticonfig --initial can and likely will 'break' your setup. If you accidentally alter their configuration, you'll need to de-install the drivers, reboot, reinstall the drivers, reboot, then rebuild ethminer. 
+Whatever you do, if you are on 14.04.02 do not alter the drivers or the drivers configuration once set. For example, the usage of `aticonfig --initial` can and likely will 'break' your setup. If you accidentally alter their configuration, you'll need to de-install the drivers, reboot, reinstall the drivers and reboot. 
 
 # Mining with eth
 
