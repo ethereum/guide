@@ -258,4 +258,4 @@ true
 ⧎ ◌  13:40:23|p2p|55581d43…|Geth/v1.0.1/linux/go1.4.2  Closing peer session :-(
 ```
 
-For a healthy logging level us the value of 1.
+For a healthy logging level use the value of 1.
