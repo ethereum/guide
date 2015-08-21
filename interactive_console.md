@@ -111,3 +111,81 @@ If you would like to obtain a list with information on the peers you are connect
 > 
 ```
 
+#### Getting your node information
+
+To obtain your node ID along with other information acout your node's address in the network then use `web3.admin.net.nodeInfo()`
+
+
+```
+> web3.admin.net.nodeInfo()
+{
+  address: '209.131.41.48',
+  enode: 'enode://5bf4613faca50a0ff181915b2d8e5f0a87c82ed5a57dabc9812937bdacb167cf1420652930143a743d6238e0279bd91862c72f9d1d0cbb73b86c4ca1cf966432@209.131.41.48:30303',
+  id: '5bf4613faca50a0ff181915b2d8e5f0a87c82ed5a57dabc9812937bdacb167cf1420652930143a743d6238e0279bd91862c72f9d1d0cbb73b86c4ca1cf966432',
+  listenAddr: '209.131.41.48:30303',
+  name: '++eth-v0.9.41-cb61d09d/Lefteris'\ node//RelWithDebInfo-Linux/g++/int',
+  port: 30303
+}
+```
+
+#### Connecting to other nodes
+
+Sometimes, peer discovery may not work properly, or you may want to connect to a particular node in the network. In those cases you can use the `web3.admin.net.connect()` function to manually connect to a peer.
+
+
+```
+> web3.admin.net.connect("5.1.83.226:30303")                                                                                                                                                      
+true
+```
+
+
+If the above was succesfull we can see our new peer in the list:
+
+```
+> web3.admin.net.peers()
+[{
+  caps: {
+    eth: 61
+  },
+  clientVersion: '++eth-v0.9.40-7faadaf4/EthDEV Frontier//RelWithDebInfo-Linux/g++/JIT',
+  host: '5.1.83.226',
+  id: '979b7fa28feeb35a4741660a16076f1943202cb72b6af70d327f053e248bab9ba81760f39d0701ef1d8f89cc1fbd2cacba0710a12cd5314d5e0c9021aa3637f9',
+  lastPing: 31,
+  notes: {
+    ask: 'nothing',
+    manners: 'nice',
+    sync: 'holding'
+  },
+  port: 30303
+}, {
+  caps: {
+    eth: 61
+  },
+  clientVersion: 'Geth/v1.0.2-4591ae56/linux/go1.4.2',
+  host: '52.16.188.185',
+  id: 'a979fb575495b8d6db44f750317d0f4622bf4c2aa3365d6af7c284339968eef29b69ad0dce72a4d8db5ebb4968de0e3bec910127f134779fbcb0cb6d3331163c',
+  lastPing: 41,
+  notes: {
+    ask: 'nothing',
+    manners: 'nice',
+    sync: 'ongoing'
+  },
+  port: 0
+}, {
+  caps: {
+    eth: 61
+  },
+  clientVersion: '++eth-v0.9.40-a1e4483e/Gav's Node//RelWithDebInfo-Linux/g++/int',
+  host: '92.51.165.126',
+  id: '5374c1bff8df923d3706357eeb4983cd29a63be40a269aaa2296ee5f3b2119a8978c0ed68b8f6fc84aad0df18790417daadf91a4bfbb786a16c9b0a199fa254a',
+  lastPing: 17,
+  notes: {
+    ask: 'nothing',
+    manners: 'nice',
+    sync: 'ongoing'
+  },
+  port: 30300
+}]
+```
+
+
