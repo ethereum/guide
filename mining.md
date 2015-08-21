@@ -36,7 +36,7 @@ Mining with multiple GPUs and `eth` is very similar to mining with [geth and mul
  ```
  Where `XX` is an index number corresponding to the openCL device you want the ethminer to use. 
  
- In order to easily get a list of OpenCL devices you can execute `eth --list-devices` which will
+ In order to easily get a list of OpenCL devices you can execute `ethminer --list-devices` which will
 provide a list of all devices OpenCL can detect, with also some additional information per device. Below is a sample output:
  ```
  [0] GeForce GTX 770
