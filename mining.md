@@ -50,7 +50,20 @@ provide a list of all devices OpenCL can detect, with also some additional infor
  
 ## Benchmarking
 
-Mining power tends to scale with memory bandwidth. Our implementation is written in OpenCL, which is typically supported better by AMD GPUs over NVidia. Empirical evidence confirms that AMD GPUs offer a better mining performance in terms of price than their NVidia counterparts. R9 290x regularly tops benchmarks. 
+Mining power tends to scale with memory bandwidth. Our implementation is written in OpenCL, which is typically supported better by AMD GPUs over NVidia. Empirical evidence confirms that AMD GPUs offer a better mining performance in terms of price than their NVidia counterparts. R9 290x appears to be the best card at present. 
+
+To benchmark a single-device setup you can use `ethminer` in benchmarking mode through the `-M` option:
+
+```
+ethminer -G -M
+```
+
+If you have many devices and you'll like to benchmark each individually, you can use the `--opencl-device` option similarly to the previous section:
+
+```
+ethminer -G -M --opencl-device XX
+```
+Use `eth --list-devices` to list possible numbers to substitute for the `XX`.
 
  
 ## Questions
