@@ -188,4 +188,49 @@ If the above was succesfull we can see our new peer in the list:
 }]
 ```
 
+## Miscellaneous administration
 
+#### Exiting the client
+
+You can exit the client with a `Ctrl-C` signal but you can also use `web3.admin.eth.exit()`
+
+```
+> web3.admin.eth.exit()
+true
+ ⚡   13:36:50|eth  Stop worker 510 ms
+  ℹ  13:36:50|eth  Closing blockchain DB
+  ℹ  13:36:50|eth  Closing state DB
+ ⚡   13:36:50|ethsync  Worker stopping 582 ms
+ ⚡   13:36:50|p2p  Worker stopping 581 ms
+lefteris@archlenovo ~/ew/cpp-ethereum$
+```
+
+#### Changing the log verbosity
+
+If you would like to see more log messages you can change the log verbosity by `web3.admin.web3.setVerbosity()`. This function takes a numeric argument from 0 to 99.
+
+```
+> web3.admin.web3.setVerbosity(4)
+true
+⧎ ◌  13:40:21|p2p|17417d7b…|Geth/v1.0.1-99216f4a/linux/go1.4.2  GetBlockHashesByNumber ( 119085 - 119596 )
+⧎ ◌  13:40:21|p2p|0c88df87…|Geth/Siberia19/v1.0.2-9fb7bc74/linux/go1.4.2  GetBlockHashesByNumber ( 116890 - 116890 )
+⧎ ◌  13:40:21|p2p|17417d7b…|Geth/v1.0.1-99216f4a/linux/go1.4.2  GetBlocks ( 16 entries)
+⧎ ◌  13:40:21|p2p|17417d7b…|Geth/v1.0.1-99216f4a/linux/go1.4.2  16 blocks known and returned; 0 blocks unknown; 0 blocks ignored
+⧎ ◌  13:40:22|p2p|0c88df87…|Geth/Siberia19/v1.0.2-9fb7bc74/linux/go1.4.2  GetBlockHashesByNumber ( 116430 - 116430 )
+⧎ ◌  13:40:22|p2p|0c88df87…|Geth/Siberia19/v1.0.2-9fb7bc74/linux/go1.4.2  GetBlockHashesByNumber ( 116660 - 116660 )
+⧎ ◌  13:40:22|p2p|0c88df87…|Geth/Siberia19/v1.0.2-9fb7bc74/linux/go1.4.2  GetBlockHashesByNumber ( 116545 - 116545 )
+⧎ ◌  13:40:22|p2p|0c88df87…|Geth/Siberia19/v1.0.2-9fb7bc74/linux/go1.4.2  GetBlockHashesByNumber ( 116487 - 116487 )
+⧎ ◌  13:40:22|p2p|0c88df87…|Geth/Siberia19/v1.0.2-9fb7bc74/linux/go1.4.2  GetBlockHashesByNumber ( 116516 - 116516 )
+⧎ ◌  13:40:22|p2p|0c88df87…|Geth/Siberia19/v1.0.2-9fb7bc74/linux/go1.4.2  GetBlockHashesByNumber ( 116530 - 116530 )
+⧎ ◌  13:40:23|p2p|0c88df87…|Geth/Siberia19/v1.0.2-9fb7bc74/linux/go1.4.2  GetBlockHashesByNumber ( 116523 - 116523 )
+⧎ ◌  13:40:23|p2p|0c88df87…|Geth/Siberia19/v1.0.2-9fb7bc74/linux/go1.4.2  GetBlockHashesByNumber ( 116526 - 116526 )
+⧎ ◌  13:40:23|p2p|0c88df87…|Geth/Siberia19/v1.0.2-9fb7bc74/linux/go1.4.2  GetBlockHashesByNumber ( 116524 - 116524 )
+⧎ ◌  13:40:23|p2p|0c88df87…|Geth/Siberia19/v1.0.2-9fb7bc74/linux/go1.4.2  GetBlockHashesByNumber ( 116525 - 116525 )
+⧎ ◌  13:40:23|p2p|0c88df87…|Geth/Siberia19/v1.0.2-9fb7bc74/linux/go1.4.2  GetBlockHashesByNumber ( 116525 - 117036 )
+⧎ ◌  13:40:23|p2p  Hello: Geth/v1.0.1/linux/go1.4.2 V[ 4 ] ##55581d43… (eth,61) 0
+⧎ ◌  13:40:23|p2p|55581d43…|Geth/v1.0.1/linux/go1.4.2  Status: 61 / 1 / #95e83250… , TD: 582573549 = #a4f70ef1…
+⧎ ◌  13:40:23|p2p|55581d43…|Geth/v1.0.1/linux/go1.4.2  Disconnect (reason: Unknown reason. )
+⧎ ◌  13:40:23|p2p|55581d43…|Geth/v1.0.1/linux/go1.4.2  Closing peer session :-(
+```
+
+For a healthy logging level us the value of 1.
