@@ -5,5 +5,5 @@
 * [Getting started](getting_started.md)
 * [Mining](mining.md)
 * [Interactive Console](interactive_console.md)
-* Whisper
+* [Whisper](whisper.md)
 
