@@ -1,6 +1,6 @@
 # Mining on Ethereum with eth
 
-Mining on Ethereum with `eth` is simple. If you need to mine with a single GPU then, just running` eth` will be sufficient. If not you can use a combination of `eth` and `ethminer`.
+Mining on Ethereum with `eth` is simple. If you need to mine with a single GPU then, just running` eth` will be sufficient. If not you can use a combination of `eth` and `ethminer`. This works on all platforms, though Linux is usually the easiest to set up.
 
 ## Mining on a single GPU
 
@@ -47,3 +47,26 @@ provide a list of all devices OpenCL can detect, with also some additional infor
 
  ```
  Finally the `--no-precompute` argument requests that the ethminers don't create the [DAG](https://github.com/ethereum/wiki/wiki/Ethash-DAG) of the next epoch ahead of time.
+ 
+## Benchmarking
+
+Mining power tends to scale with memory bandwidth. Our implementation is written in OpenCL, which is typically supported better by AMD GPUs over NVidia. Empirical evidence confirms that AMD GPUs offer a better mining performance in terms of price than their NVidia counterparts. R9 290x regularly tops benchmarks. 
+
+ 
+## Questions
+
+### What is mining?
+
+Mining is a common term for securing the Ethereum network and validating new transactions in exchange for a small payment. Anyone can mine, though it really helps if you can a good GPU. How often you're paid out depends on who else is mining and how much mining power (read: computation power) your hardware has.
+
+### What mining algorithm do you use?
+
+We use a custom-made algorithm named Ethash, a combination of the Hashimoto and Dagger algorithms, designed by Tim Hughes, Vitalik Buterin and Matthew Wampler-Doty. It is memory-bandwidth-hard making is an excellent candidate for GPU mining but a bad candidate for custom hardware. We plan on switching to a proof-of-stake algorithm inover the course of the next 9 months with the Serenity release of Ethereum.
+
+### What hardware do I need to mine?
+
+Because the algorithm is memory hard, you'll need 2GB of RAM per GPU with which you wish to mine, at least for the forseeable future. (The dataset starts at 1GB and grows every few days, so you might be able to get away with 1.5GB for the first few months, if such graphics cards exist.)
+
+### What about ASICs?
+
+ASICs and FPGAs is be strongly discouraged by being rendered financially inefficient, which was confirmed in an independent audit. Don't expect to see them on the market, and if you do, proceed with extreme caution.
