@@ -4,7 +4,9 @@ In order to interact with the client you can provide the `-i` argument to start 
 
 To see all available functions type `web3` in the console prompt and press enter. For only the administrative functions type `web3.admin`.
 
-- [Network connectivity](network-connectivity)
+- [Network connectivity](interactive_console.md#network-connectivity)
+- [Mining](interactive_console.md#mining)
+- [Miscellaneous administration](interactive_console.md#miscellaneous-administration)
 
 ##Network connectivity
 
@@ -189,6 +191,27 @@ If the above was succesfull we can see our new peer in the list:
   port: 30300
 }]
 ```
+
+## Mining
+
+You can also start and stop mining using the interactive console. To start mining use `web3.admin.eth.setMining(true)`
+
+```
+> web3.admin.eth.setMining(true)                                                                                                                                                                                                                                              
+  ℹ  13:48:01|miner0  Loading full DAG of seedhash: #b903bd76…
+> web3.admin.eth.setMining(ttrue
+DAG  13:48:01|miner0  Generating DAG file. Progress: 0 %
+DAG  13:48:04|miner0  Generating DAG file. Progress: 1 %
+DAG  13:48:07|miner0  Generating DAG file. Progress: 2 %
+ ⚡   13:48:08|eth  Stop worker 249 ms
+ ⚡   13:48:09|eth  Stop worker 479 ms
+ ⚡   13:48:09|eth  pause 480 ms
+ ⚡   13:48:09|eth  Stop worker 480 ms
+ ⚡   13:48:09|eth  pause 480 ms
+
+```
+
+Then again to stop mining simply invoke `web3.admin.eth.setMining(false)`
 
 ## Miscellaneous administration
 
