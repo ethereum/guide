@@ -1,4 +1,28 @@
-# Mining on Ethereum with eth
+# Mining on Ethereum
+
+Mining is a common term for securing the Ethereum network and validating new transactions in exchange for a small payment. Anyone can mine, though it really helps if you can a good GPU. How often you're paid out depends on who else is mining and how much mining power (read: computation power) your hardware has.
+
+We use a custom-made algorithm named Ethash, a combination of the Hashimoto and Dagger algorithms, designed by Tim Hughes, Vitalik Buterin and Matthew Wampler-Doty. It is memory-bandwidth-hard making is an excellent candidate for GPU mining but a bad candidate for custom hardware. We plan on switching to a proof-of-stake algorithm inover the course of the next 9 months with the Serenity release of Ethereum.
+
+Because the algorithm is memory hard, you'll need 2GB of RAM per GPU with which you wish to mine, at least for the forseeable future. (The dataset starts at 1GB and grows every few days, so you might be able to get away with 1.5GB for the first few months, if such graphics cards exist.)
+
+ASICs and FPGAs is be strongly discouraged by being rendered financially inefficient, which was confirmed in an independent audit. Don't expect to see them on the market, and if you do, proceed with extreme caution.
+
+## Setting things up on Linux
+
+For this quick guide, you'll need Ubuntu 14.04 or 15.04 and the fglrx graphics drivers. You an use NVidia drivers and other platforms, too, but you'll have to find your own way to getting a working OpenCL install with them.
+
+If you're on 15.04, Go to "Software and Updates > Additional Drivers" and set it to "Using video drivers for the AMD graphics accelerator from fglrx". Once the drivers are installed and in use, you're all set, go to the next section!
+
+If you're on 14.04, go to "Software and Updates > Additional Drivers" and set it to "Using video drivers for the AMD graphics accelerator from fglrx". Unfortunately, for some of you this will not work due to a known bug in Ubuntu 14.04.02 preventing you from switching to the proprietary graphics drivers required to GPU mine. 
+
+So, if you encounter this bug, and before you do anything else, go to "Software and updates > Updates" and select "Pre-released updates trusty proposed". Then, go back to "Software and Updates > Additional Drivers" and set it to "Using video drivers for the AMD graphics accelerator from fglrx"). Reboot. 
+
+Once rebooted, it's well worth having a check that the drivers have now indeed been installed correctly.
+
+Whatever you do, if you are on 14.04.02 do not alter the drivers or the drivers configuration once set. For example, the usage of aticonfig --initial can and likely will 'break' your setup. If you accidentally alter their configuration, you'll need to de-install the drivers, reboot, reinstall the drivers, reboot, then rebuild ethminer. 
+
+# Mining with eth
 
 Mining on Ethereum with `eth` is simple. If you need to mine with a single GPU then, just running` eth` will be sufficient. If not you can use a combination of `eth` and `ethminer`. This works on all platforms, though Linux is usually the easiest to set up.
 
@@ -64,22 +88,3 @@ If you have many devices and you'll like to benchmark each individually, you can
 ethminer -G -M --opencl-device XX
 ```
 Use `ethminer --list-devices` to list possible numbers to substitute for the `XX`.
-
- 
-## Questions
-
-### What is mining?
-
-Mining is a common term for securing the Ethereum network and validating new transactions in exchange for a small payment. Anyone can mine, though it really helps if you can a good GPU. How often you're paid out depends on who else is mining and how much mining power (read: computation power) your hardware has.
-
-### What mining algorithm do you use?
-
-We use a custom-made algorithm named Ethash, a combination of the Hashimoto and Dagger algorithms, designed by Tim Hughes, Vitalik Buterin and Matthew Wampler-Doty. It is memory-bandwidth-hard making is an excellent candidate for GPU mining but a bad candidate for custom hardware. We plan on switching to a proof-of-stake algorithm inover the course of the next 9 months with the Serenity release of Ethereum.
-
-### What hardware do I need to mine?
-
-Because the algorithm is memory hard, you'll need 2GB of RAM per GPU with which you wish to mine, at least for the forseeable future. (The dataset starts at 1GB and grows every few days, so you might be able to get away with 1.5GB for the first few months, if such graphics cards exist.)
-
-### What about ASICs?
-
-ASICs and FPGAs is be strongly discouraged by being rendered financially inefficient, which was confirmed in an independent audit. Don't expect to see them on the market, and if you do, proceed with extreme caution.
