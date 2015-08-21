@@ -63,7 +63,7 @@ If you have many devices and you'll like to benchmark each individually, you can
 ```
 ethminer -G -M --opencl-device XX
 ```
-Use `eth --list-devices` to list possible numbers to substitute for the `XX`.
+Use `ethminer --list-devices` to list possible numbers to substitute for the `XX`.
 
  
 ## Questions
