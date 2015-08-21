@@ -4,6 +4,8 @@ In order to interact with the client you can provide the `-i` argument to start 
 
 To see all available functions type `web3` in the console prompt and press enter. For only the administrative functions type `web3.admin`.
 
+- [Network connectivity](network-connectivity)
+
 ##Network connectivity
 
 ### Querying network information
