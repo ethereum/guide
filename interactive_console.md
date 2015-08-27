@@ -217,10 +217,10 @@ Then again to stop mining simply invoke `web3.admin.eth.setMining(false)`
 
 #### Exiting the client
 
-You can exit the client with a `Ctrl-C` signal but you can also use `web3.admin.eth.exit()`
+You can exit the client with a `Ctrl-C` signal but you can also use `web3.admin.exit()`
 
 ```
-> web3.admin.eth.exit()
+> web3.admin.exit()
 true
  ⚡   13:36:50|eth  Stop worker 510 ms
   ℹ  13:36:50|eth  Closing blockchain DB
@@ -232,10 +232,10 @@ lefteris@archlenovo ~/ew/cpp-ethereum$
 
 #### Changing the log verbosity
 
-If you would like to see more log messages you can change the log verbosity by `web3.admin.web3.setVerbosity()`. This function takes a numeric argument from 0 to 99.
+If you would like to see more log messages you can change the log verbosity by `web3.admin.setVerbosity()`. This function takes a numeric argument from 0 to 99.
 
 ```
-> web3.admin.web3.setVerbosity(4)
+> web3.admin.setVerbosity(4)
 true
 ⧎ ◌  13:40:21|p2p|17417d7b…|Geth/v1.0.1-99216f4a/linux/go1.4.2  GetBlockHashesByNumber ( 119085 - 119596 )
 ⧎ ◌  13:40:21|p2p|0c88df87…|Geth/Siberia19/v1.0.2-9fb7bc74/linux/go1.4.2  GetBlockHashesByNumber ( 116890 - 116890 )
