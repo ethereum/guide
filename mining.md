@@ -1,6 +1,6 @@
 # Mining on Ethereum
 
-Mining is a common term for securing the Ethereum network and validating new transactions in exchange for a small payment. Anyone can mine, though it really helps if you can a good GPU. How often you're paid out depends on who else is mining and how much mining power (read: computation power) your hardware has.
+Mining is a common term for securing the Ethereum network and validating new transactions in exchange for a small payment. Anyone can mine, though it really helps if you can a good GPU. How often you are paid out depends on who else is mining and how much mining power (read: computation power) your hardware has.
 
 We use a custom-made algorithm named Ethash, a combination of the Hashimoto and Dagger algorithms, designed by Tim Hughes, Vitalik Buterin and Matthew Wampler-Doty. It is memory-bandwidth-hard making is an excellent candidate for GPU mining but a bad candidate for custom hardware. We plan on switching to a proof-of-stake algorithm inover the course of the next 9 months with the Serenity release of Ethereum.
 
