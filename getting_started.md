@@ -49,17 +49,20 @@ Mining Beneficiary: XE712F44QOZBKNLD20DLAEE8O2YJ7XRGP4 (be5af9b0-9917-b9bc-8f95-
 
 `eth` is nice. It tells you that any transactions you do will come from your account beginning with `XE712F44`. Similarly by default, if you mine successfully with the inbuilt miner, the proceeds will go into the same account.
 
-You'll notice that there are two other codes in parentheses. The first is the *UUID* of the key. This is a code, only used on your computer, which allows us to identify which file the key is stored in without giving any any information of what account the key is for. In this case, the UUID begins with `be5af9b0`. Let's check that you do indeed have the key file for this account!
+You'll notice that there are two other codes in parentheses. The first is the *UUID* of the key. This is a code, only used on your computer, which allows us to identify which file the key is stored in without giving any any information of what account the key is for. In this case, the UUID begins with `be5af9b0`. 
 
-## Find that Key!
+The second piece of information that is parenthesised is the first few digits of the hex key. Older clients and Ethereum software depend on this to identify accounts. We don't use it any more because it's longer and doesn't have any way of determining if an address is invalid, so errors with mistyping can easily have major consequences.
+
+Let's check that you do indeed have the key file for this account!
+
+### Find that Key!
 
 If you're using Linux or MacOS, open another terminal and navigate to `~/.web3/keys`. This is where all of your keys are stored. Enter `ls` and make sure there's a file that corresponds to the account's UUID. 
 
-For Windows users, just use Explorer to navigate into your home folder's AppData/Web3/keys directory (you might need to enable Show Hidden Files to get there.
+For Windows users, just use Explorer to navigate into your home folder's AppData/Web3/keys directory (you might need to enable Show Hidden Files to get there).
 
 If you don't find a file with the same name as the UUID, then something is terribly wrong (out of disk space, possibly)! Get yourself on the forums and ask before going any further.
 
-The second piece of information that is parenthesised is the first few digits of the hex key. Older clients and Ethereum software depend on this to identify accounts. We don't use it any more because it's longer and doesn't have any way of determining if an address is invalid, so errors with mistyping can easily have major consequences.
 
 ## Syncing up
 
