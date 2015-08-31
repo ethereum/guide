@@ -63,7 +63,6 @@ For Windows users, just use Explorer to navigate into your home folder's AppData
 
 If you don't find a file with the same name as the UUID, then something is terribly wrong (out of disk space, possibly)! Get yourself on the forums and ask before going any further.
 
-
 ## Syncing up
 
 You'll now start seeing a little bit of information as it tries to connect to the network. You might see a line like:
@@ -75,13 +74,13 @@ You'll now start seeing a little bit of information as it tries to connect to th
 This is it telling you that it's managed to contact another node. After a little while it will begin to synchronise to the network. This will probably give you an awful lot of messages. If there are too many for you to handle, reduce them by changing the verbosity. We can set the verbosity to zero (the lowest and quietest) by typing:
 
 ```
-web3.admin.web3.setVerbosity(0)
+web3.admin.setVerbosity(0)
 ```
 
 It'll reply `true` to tell you that all is fine:
 
 ```
-> web3.admin.web3.setVerbosity(0)
+> web3.admin.setVerbosity(0)
 true
 ```
 
