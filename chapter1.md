@@ -2,7 +2,9 @@
 
 Installation is a different process dependent on which platform you run. At present, TurboEthereum supports three platforms: Ubuntu, Mac OS X and Windows.
 
-**Note: cpp-ethereum is still in beta, Please file an [issue](https://github.com/ethereum/cpp-ethereum/issues) if you have problems with installing. Tests are done on all clients, but developers tend to use Ubuntu and Mac OS more than Windows, so they're likely to work a bit better.**
+For installing the desktop tools on Windows and Mac, just grab the [latest release](https://github.com/ethereum/webthree-umbrella/releases). (For Windows you might also need [this](http://www.microsoft.com/en-US/download/details.aspx?id=40784).)
+
+For installing on Ubuntu or Homebrew, instructions follow.
 
 # Installing on Ubuntu 14.04 and later (64-bit)
 
@@ -54,13 +56,7 @@ wget http://opensecrecy.com/setupeth.sh && source ./setupeth.sh BRANCH NODE_IP N
 Wait for it to reboot and you'll be running a node.
 -->
 
-# Installing on OS X
-
-## Downloading AlethZero
-
-If you're just interested in the GUI client AlethZero without the command line interfaces, download the latest [stable](https://build.ethdev.com/builds/OSX%20C%2B%2B%20master%20branch/AlethZero-OSX-latest.tar.bz2) or [cutting edge](https://build.ethdev.com/builds/OSX%20C%2B%2B%20GUI%20develop%20branch/AlethZero-OSX-latest.dmg) version.
-
-## Using Homebrew
+# Installing on OS X and Homebrew
 
 If you want the full suite of CLI tools, include `eth` and `ethminer`, you'll need [Homebrew](brew.sh). 
 
@@ -85,29 +81,3 @@ Add the `--with-gui` option to include the AlethZero and the Mix IDE in the inst
 
 For options and patches, see: https://github.com/ethereum/homebrew-ethereum
 
-# Installing on Windows (64-bit)
-
-## Downloading
-
-First, get the [Visual C++ Redistributable Package for Visual Studio 2013](http://www.microsoft.com/en-US/download/details.aspx?id=40784). Download the 32-bit version (`vcredist_x86.exe`) even when you have a 64-bit version of Windows.
-
-Then, download the installer for the latest [stable](https://build.ethdev.com/builds/Windows%20C%2b%2b%20master%20branch/Ethereum%20%28%2B%2B%29-win64-latest.exe) (tends to work fine, but might not have the latest features) or [cutting edge](https://build.ethdev.com/builds/Windows%20C%2B%2B%20develop%20branch/Ethereum%20%28%2B%2B%29-win64-latest.exe) (all the latest features, less well tested).
-
-## Or, use Chocolatey
-
-Tested on Windows 7 and Windows 8.1, installing using the [Chocolatey package for AlethZero](https://github.com/chevdor/ethereum-chocolatey) is very similar to using Unix package managers such as Homebrew, apt-get and co.
-
-After installing [chocolatey](http://chocolatey.org), install AlethZero in an **admin shell**:
-```
-cinst -pre alethzero-stable
-```
-
-If you wish to reinstall to get the latest version on top of the previous, use:
-```
-cinst -pre -force alethzero-stable
-```
-
-To uninstall:
-```
-cuninst alethzero-stable
-```
