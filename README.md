@@ -7,7 +7,9 @@ TurboEthereum is a large distribution of software including a number of diverse 
 
 The full software suite of TurboEthereum includes:
 
-- **AlethZero** (`alethzero`) The mainline GUI Ethereum client. It connects and syncs to the Ethereum network and lets you mine, make transactions, run DApps and inspect the blockchain.
+- **AlethOne** (`alethone`, "A1") The mainline Ethereum desktop miner. It connects and syncs to the Ethereum network and lets you mine, and send transactions. It will also let you do pool mining.
+- **AlethFive** (`alethfive`, "AV") A Web3 browser. It connects and syncs to the Ethereum network and lets you use DApps and send transactions.
+- **AlethZero** (`alethzero`, "AZ") The power-user Ethereum client. It connects and syncs to the Ethereum network and lets you mine, make transactions, run DApps and inspect the blockchain. It has plugins to allow arbitrary extension.
 - **++eth** (`eth`) The mainline CLI Ethereum client. Run it in the background and it will connect to the Ethereum network; you can mine, make transactions and inspect the blockchain.
 - **Mix** (`mix`) The integrated development environment for DApp authoring. Quickly prototype and debug decentralised applications on the Ethereum platform.
 - `ethkey` A key/wallet management tool for Ethereum keys. This lets you add, remove and change your keys as well as *cold wallet device*-friendly transaction inspection and signing.
