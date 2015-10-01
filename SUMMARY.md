@@ -7,5 +7,5 @@
 * [Interactive Console](interactive_console.md)
 * [Whisper](whisper.md)
 * [Mix](mix.md)
-   * Dapps deployment
+   * [Dapps deployment](dapps_deployment.md)
 
