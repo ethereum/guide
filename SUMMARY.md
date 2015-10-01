@@ -6,5 +6,5 @@
 * [Mining](mining.md)
 * [Interactive Console](interactive_console.md)
 * [Whisper](whisper.md)
-* Mix
+* [Mix](mix.md)
 
