@@ -6,20 +6,32 @@ You can use projects to manage the creation and testing of a dapp. The project w
 
 The development of a dapp start with the creation of a new project.
 Create a new project in the “edit” menu. Enter the project name, e.g. "Ratings" and select a path for the project file.
-Editing backend contract file 
+
+## Editing backend contract file 
+
 By default, a new project contains a contract “Contract” for backend development on the blockchain using the Solidity language and the “index.html” for the frontend. Check the Solidity tutorial for references. 
+
 Edit the empty default contract “Contract”, e.g. 
+   
+   ```
    contract Rating {
+        
         function setRating(bytes32 _key, uint256 _value) {
+        
             ratings[_key] = _value;
+        
         }
         mapping (bytes32 => uint256) public ratings;
-    }
+    }```
 
-Check the Solidity tutorial for help getting started with the solidity programming language..
+Check the Solidity tutorial for help getting started with the solidity programming language.
+
 Save changes
-Editing frontend html files
+
+### Editing frontend html files
+
 Select default index.html file and enter the following code
+  ```
    <!doctype>
     <html>
     <head>
@@ -52,6 +64,6 @@ Select default index.html file and enter the following code
         </div>
     </body>
     </html>
-
+```
 
 
