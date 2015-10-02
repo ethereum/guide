@@ -13,4 +13,5 @@
    * [State Viewer](state_viewer.md)
    * [Transaction Explorer](transaction_explorer.md)
    * [JavaScript console](javascript_console.md)
+   * Transaction debugger
 
