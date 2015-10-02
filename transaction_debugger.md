@@ -13,12 +13,15 @@ Memory – Machine memory allocated up to this execution point
 
 Call data – Transaction or call parameters
 
+##Accessing the debug mode
 When transaction details are expanded, you can switch to the debugger view by clicking on the "Debug Transaction" button
 
-Toggling between debug modes and stepping through transactions
-You can access the debug mode by clicking on the little arrow button the transaction panel. This opens the Solidity debugging mode. Switch between Solidity and EVM debugging mode using the toggle button  
-Step through a transaction in solidity debugging mode
-Step through a transaction in EVM debugging mode
+##Toggling between debug modes and stepping through transactions
+This opens the Solidity debugging mode. Switch between Solidity and EVM debugging mode using the toggle button  
+
+ - Step th ough a transaction in solidity debugging mode
+
+ - Step through a transaction in EVM debugging mode
 
 
 
