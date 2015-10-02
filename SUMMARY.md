@@ -12,6 +12,6 @@
    * [State Viewer](state_viewer.md)
    * [Transaction Explorer](transaction_explorer.md)
    * [JavaScript console](javascript_console.md)
-   * [Dapps deployment](dapps_deployment.md)
    * [Transaction debugger](transaction_debugger.md)
+   * [Dapps deployment](dapps_deployment.md)
 
