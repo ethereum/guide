@@ -8,5 +8,5 @@
 * [Whisper](whisper.md)
 * [Mix](mix.md)
    * [Dapps deployment](dapps_deployment.md)
-   * Project Editor
+   * [Project Editor](project_editor.md)
 
