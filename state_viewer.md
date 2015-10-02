@@ -7,3 +7,7 @@ By state we mean all accounts balance (including contract and normal account), a
 The content of this panel is not static, it depends on the selected transaction on the blockchain panel.
 The state shown here is the state resulting of the execution of the selected transaction.
 
+![](state_mix.png)
+
+In that case, 2 contracts are deployed, the selected transaction (deployment of testCtr) is the last one. so the state view shows the storage of both TestCtr and BasicContract.
+
