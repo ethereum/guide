@@ -66,4 +66,6 @@ Select default index.html file and enter the following code
     </html>
 ```
 
+Then it is possible to add many contract files as well as many HTML, JavaScript file.
+
 
