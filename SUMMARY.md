@@ -10,5 +10,5 @@
    * [Dapps deployment](dapps_deployment.md)
    * [Project Editor](project_editor.md)
    * [Scenarios Editor](scenarios_editor.md)
-   * State Viewer
+   * [State Viewer](state_viewer.md)
 
