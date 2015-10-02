@@ -9,5 +9,5 @@
 * [Mix](mix.md)
    * [Dapps deployment](dapps_deployment.md)
    * [Project Editor](project_editor.md)
-   * Scenarios Editor
+   * [Scenarios Editor](scenarios_editor.md)
 
