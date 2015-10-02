@@ -11,5 +11,5 @@
    * [Project Editor](project_editor.md)
    * [Scenarios Editor](scenarios_editor.md)
    * [State Viewer](state_viewer.md)
-   * Transaction Explorer
+   * [Transaction Explorer](transaction_explorer.md)
 
