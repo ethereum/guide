@@ -15,4 +15,5 @@
    * [Transaction debugger](transaction_debugger.md)
    * [Dapps deployment](dapps_deployment.md)
 * CLI Tools
+   * ethkey
 
