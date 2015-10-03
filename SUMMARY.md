@@ -7,7 +7,7 @@
 * [Interactive Console](interactive_console.md)
 * [Whisper](whisper.md)
 * CLI Tools
-   * ethkey
+   * [ethkey](ethkey.md)
 * [Mix](mix.md)
    * [Project Editor](project_editor.md)
    * [Scenarios Editor](scenarios_editor.md)
