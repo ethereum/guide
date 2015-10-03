@@ -93,7 +93,18 @@ test (0092e965…)
   Raw hex: 0092e965928626f8880629cec353d3fd7ca5974f
 ```
 
-We'll get the same output if we use `inspect XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ` or `inspect 0092e965928626f8880629cec353d3fd7ca5974f`.
+We could just as easily use the ICAP `XE472EVK...` or raw hex `0092e965...`:
+
+```
+> ethkey inspect XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ
+test (0092e965…)
+  ICAP: XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ
+  Raw hex: 0092e965928626f8880629cec353d3fd7ca5974f
+> ethkey inspect 0092e965928626f8880629cec353d3fd7ca5974f
+test (0092e965…)
+  ICAP: XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ
+  Raw hex: 0092e965928626f8880629cec353d3fd7ca5974f
+```
 
 ### Backing up Your Keys
 
