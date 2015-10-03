@@ -268,7 +268,7 @@ So it begins by asking for your key's old passphrase. Enter in the correct answe
 It will then ask you for the new password (enter `321`) followed by a confirmation (enter the same) and a password hint (`123 backwards`). 
 
 ```
-Enter new passphrase for key test: 
+Enter new passphrase for key 'test': 
 Please confirm the passphrase by entering it again: 
 Enter a hint to help you remember this passphrase: 123 backwards
 Re-encoded key 'test' successfully.
