@@ -260,7 +260,7 @@ To do so, simply pass in the name(s) of any keys whose passwords you wish to cha
 
 ```
 > ethkey recode test
-Enter old passphrase for key test (hint: 321 backwards):
+Enter old passphrase for key 'test' (hint: 321 backwards):
 ```
 
 So it begins by asking for your key's old passphrase. Enter in the correct answer `123`.
