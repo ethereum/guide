@@ -80,7 +80,20 @@ It reports one key on each line (for a total of one key here). In this case our 
 
 ### ICAP or Raw hex?
 
-You might see old addresses passed 
+You might see addresses passed as hex-only strings, especially with old software. These are dangerous since they don't include a checksum or special code to detect typos. You should generally try to keep clear of them.
+
+Occasionally, however, it's important to convert between the two. `ethkey` provides the `inspect` command for this purpose. When passed any address, file or UUID, it will tell you information about it including both formats of address.
+
+For example, to get it to tell us about our account, we might use:
+
+```
+> ethkey inspect test
+test (0092e965…)
+  ICAP: XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ
+  Raw hex: 0092e965928626f8880629cec353d3fd7ca5974f
+```
+
+We'll get the same output if we use `inspect XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ` or `inspect 0092e965928626f8880629cec353d3fd7ca5974f`.
 
 ### Backing up Your Keys
 
