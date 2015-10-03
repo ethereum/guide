@@ -157,7 +157,7 @@ Let's now delete our key we've made. Deleting a key actually actually deletes th
 > cp ~/.web3/keys/* ~/backup-keys
 ```
 
-or for Windows:
+or, for Windows:
 
 ```
 > md $HOME/backup-keys
@@ -185,20 +185,26 @@ No keys found.
 
 Now let's support we made a horrible mistake and want to recover the account. Luckily we made a backup!
 
-We could simply copy it back into the original `keys` directory. This would indeed make the key "available", however it would only be identifiable by its UUID (the filename minus the `.json`).
+We could simply copy it back into the original `keys` directory. This would indeed make the key "available", however it would only be identifiable by its UUID (the filename minus the `.json`). This is a bit of a pain.
 
 Better would be to reimport it into the wallet, which makes it addressable by its ICAP and hex, and gives it a name and password hint to boot. To do this, we need to use the `import` command, which takes the file and the name of the key:
 
 ```
-ethkey import /tmp/055dde03-47ff-dded-8950-0fe39b1fa101.json test
-Enter the passphrase for the key:
+> ethkey import ~/backup-keys/* test
+```
+
+or, for Windows:
+
+```
+> ethkey import $HOME/backup-keys/*.* test
 ```
 
 Here it will need to know the passphrase for the key, mainly to determine the address of the key for placing into the wallet. There's no hint now because the wallet doesn't know anything about it. Enter the `123` passphrase.
 
-Now it will ask you to provide a hint (assuming it's different to the master password, which ours is). Enter the same hint.
+It will then ask you to provide a hint (assuming it's different to the master password, which ours is). Enter the same hint.
 
 ```
+Enter the passphrase for the key:
 Enter a hint to help you remember the key's passphrase: 321 backwards
 Imported key 055dde03-47ff-dded-8950-0fe39b1fa101
   Name: test
