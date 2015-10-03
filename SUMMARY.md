@@ -4,8 +4,8 @@
 * [Installation](chapter1.md)
 * [Getting started](getting_started.md)
 * [Mining](mining.md)
-* [Interactive Console](interactive_console.md)
 * CLI Tools
+   * [Interactive Console](interactive_console.md)
    * [ethkey](ethkey.md)
 * [Mix](mix.md)
    * [Project Editor](project_editor.md)
