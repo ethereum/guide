@@ -2,8 +2,8 @@
 
 * [Introduction](README.md)
 * [Installation](chapter1.md)
-* [Getting started](getting_started.md)
 * CLI Tools
+   * [Getting started](getting_started.md)
    * [Interactive Console](interactive_console.md)
    * [Mining](mining.md)
    * [ethkey](ethkey.md)
