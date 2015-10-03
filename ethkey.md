@@ -181,3 +181,43 @@ Check by calling `list`:
 No keys found.
 ```
 
+### Restoring an Account from a Backup
+
+Now let's support we made a horrible mistake and want to recover the account. Luckily we made a backup!
+
+We could simply copy it back into the original `keys` directory. This would indeed make the key "available", however it would only be identifiable by its UUID (the filename minus the `.json`).
+
+Better would be to reimport it into the wallet, which makes it addressable by its ICAP and hex, and gives it a name and password hint to boot. To do this, we need to use the `import` command, which takes the file and the name of the key:
+
+```
+ethkey import /tmp/055dde03-47ff-dded-8950-0fe39b1fa101.json test
+Enter the passphrase for the key:
+```
+
+Here it will need to know the passphrase for the key, mainly to determine the address of the key for placing into the wallet. There's no hint now because the wallet doesn't know anything about it. Enter the `123` passphrase.
+
+Now it will ask you to provide a hint (assuming it's different to the master password, which ours is). Enter the same hint.
+
+```
+Enter a hint to help you remember the key's passphrase: 321 backwards
+Imported key 055dde03-47ff-dded-8950-0fe39b1fa101
+  Name: test
+  Password hint: 321 backwards
+  ICAP: XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ
+  Raw hex: 0092e965928626f8880629cec353d3fd7ca5974f
+```
+
+Finally it will tell you that all went well and the key is reimported. We should recognise our address by now with the `XE472EVK...`.
+
+To double-check, we can list the keys:
+
+```
+> ethkey list     
+055dde03-47ff-dded-8950-0fe39b1fa101 0092e965… XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ  test
+```
+
+All restored!
+
+
+
+
