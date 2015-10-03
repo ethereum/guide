@@ -96,7 +96,7 @@ On its own, it won't do much. We can see this by decoding it in `ethkey`:
 > ethkey decode ec80850ba43b74008252089400be78bf8a425471eca0cf1d255118bc080abf95880de0b6b3a7640000801b8080
 Transaction 705d490edc318b50223efa7bb9c19d65f05c3c527e4f8e60535b46a2ed128706
   type: message
-  to: 00be78bf8a425471eca0cf1d255118bc080abf95
+  to: XE6934MX3U67M48MPHYMC1A1X306AFKEXH (00be78bf…)
   data: none
   from: <unsigned>
   value: 1 ether (1000000000000000000 wei)
@@ -106,8 +106,78 @@ Transaction 705d490edc318b50223efa7bb9c19d65f05c3c527e4f8e60535b46a2ed128706
   signing hash: f2790ed53c803ee882c892e1d9715181dfc93780d755fbe4ffefd90701e15c31
 ```
 
+Note that it states the transaction is `<unsigned>` to the right of `from:`. This means that at present it's useless. Signing it would make it useful (to me, at least, since it'd make me one Ether richer), or dangerous (to you if you didn't want to give me that Ether).
 
 ### Signing a Transaction
 
-Let's test the key by signing a transaction. `ethkey` can be used to sign a pre-existing, but unsigned, transaction (such a thing may be exported from AlethZero, for example). It can also create a transaction and sign it itself. Let's first try the former.
+`ethkey` can be used to sign a pre-existing, but unsigned, transaction (it can also create a transaction and sign it itself). In this case, the transaction is actually harmless anyway since we're signing with the key of a fresh account that has no Ether to be transferred.
+
+The command we'll use is `sign`. To use it we must identify the account with which we wish to sign. This can be the ICAP (`XE472EVK...`), the hex address (`0092e965...`), the UUID (`055dde...`), the key file or simply the plain old name (`test`). Secondly you must describe transaction it should sign. This can be done through passing the hex or through a file containing the hex.
+
+```
+> ethkey sign test ec80850ba43b74008252089400be78bf8a425471eca0cf1d255118bc080abf95880de0b6b3a7640000801b8080
+Enter passphrase for key (hint:321 backwards): 
+```
+
+It will ask you for the passphrase from earlier, along with the ludicrously transparent hint. Enter `123`, the correct answer and it will provide you with the unsigned transaction (`a37c58...`), a `:` and the signed transaction (`f86c80...`):
+
+```
+a37c588c853dc20bbaef53b680e23642a03122897bbb9a53d25d0d8f3665a94f: f86c80850ba43b74008252089400be78bf8a425471eca0cf1d255118bc080abf95880de0b6b3a7640000801ca07638c34170f3e04313bbb6c5bfc10a0c665200515a1aa5e922c7ae6c0dd085faa079ab46048e643bb4042bcb22da86d2646eb0b727f23aa3e165102b824563c70d
+```
+
+Let's make sure it worked by decoding it.
+
+```
+> ethkey decode f86c80850ba43b74008252089400be78bf8a425471eca0cf1d255118bc080abf95880de0b6b3a7640000801ca07638c34170f3e04313bbb6c5bfc10a0c665200515a1aa5e922c7ae6c0dd085faa079ab46048e643bb4042bcb22da86d2646eb0b727f23aa3e165102b824563c70d
+Transaction a37c588c853dc20bbaef53b680e23642a03122897bbb9a53d25d0d8f3665a94f
+  type: message
+  to: XE6934MX3U67M48MPHYMC1A1X306AFKEXH (00be78bf…)
+  data: none
+  from: XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ (0092e965…)
+  value: 1 ether (1000000000000000000 wei)
+  nonce: 0
+  gas: 21000
+  gas price: 50 Gwei (50000000000 wei)
+  signing hash: f2790ed53c803ee882c892e1d9715181dfc93780d755fbe4ffefd90701e15c31
+  v: 1
+  r: 7638c34170f3e04313bbb6c5bfc10a0c665200515a1aa5e922c7ae6c0dd085fa
+  s: 79ab46048e643bb4042bcb22da86d2646eb0b727f23aa3e165102b824563c70d
+```
+
+Being a signed transaction, it has the three fields at the end (`v`, `r` and `s`) and, importantly, the address from whom the transaction is sent (`from:`). You'll notice that the sender address (`XE472EVK...`) is indeed ours from before!
+
+The signed transaction can be sent in an e-mail in a similar way to how you might send a cheque in the mail. It can also be placed on the network to enact it; through the web3 API web3.sendRawTransaction
+
+### Killing an Account
+
+Let's now delete our key we've made. Deleting a key actually actually deletes the underlying file. After doing this there's no going back (unless you have a backup). To avoid losing anything, we're first going to back up our account. First, let's copy the key file somewhere safe:
+
+```
+> mkdir ~/backup-keys
+> cp ~/.web3/keys/* ~/backup-keys
+```
+
+or for Windows:
+
+```
+> md $HOME/backup-keys
+> copy $HOME/AppData/Web3/keys/*.* $HOME/backup-keys
+```
+
+Now, we'll delete the key with the `kill` command:
+
+```
+> ethkey kill test
+1 key(s) deleted.
+```
+
+And bang! It's gone.
+
+Check by calling `list`:
+
+
+```
+> ethkey list
+No keys found.
+```
 
