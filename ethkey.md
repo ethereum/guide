@@ -78,6 +78,10 @@ Now let's make sure it worked properly by listing the keys in the wallet:
 
 It reports one key on each line (for a total of one key here). In this case our key is stored in a file `055dde...` and has an ICAP address beginning `XE472EVK...`. Not especially easy things to remember so rather helpful that it has its proper name, `test`, too.
 
+### ICAP or Raw hex?
+
+You might see old addresses passed 
+
 ### Backing up Your Keys
 
 You should always back up your keys! Any backup solution that protects your home directory should also protect your keys (since that's where they live). However for added piece of mind make an explicit backup of your keys by copying the contents of the `~/.web3/keys` (Mac or Linux, or `$HOME/AppData/Web3/keys` for Windows) to an external disk. You might also open the files in a text editor, print them and keep them in a lawyer's safe for additional piece of mind. **If they get lost, nobody can help you!**
@@ -224,6 +228,31 @@ To double-check, we can list the keys:
 
 All restored!
 
+### Changing the Password
 
+Security people reckon that it is prudent to change your password regularly. You can do so easily with `ethkey` using the `recode` command (which actually does a whole lot more, but that's advanced usage).
 
+To do so, simply pass in the name(s) of any keys whose passwords you wish to change. Let's change our key's password:
+
+```
+> ethkey recode test
+Enter old passphrase for key test (hint: 321 backwards):
+```
+
+So it begins by asking for your key's old passphrase. Enter in the correct answer `123`.
+
+It will then ask you for the new password (enter `321`) followed by a confirmation (enter the same) and a password hint (`123 backwards`). 
+
+```
+Enter new passphrase for key test: 
+Please confirm the passphrase by entering it again: 
+Enter a hint to help you remember this passphrase: 123 backwards
+Re-encoded key 'test' successfully.
+```
+
+You'll finally get a confirmation that the re-encoding took place; your key is now encrypted by the new password.
+
+## The Rest
+
+There's much more to discover with `ethkey`; it provides a suite of commands for playing with "bare" secrets (i.e. those not in the wallet), with brain wallets, and allows keys to be imported without actually ever being decrypted. You can alter transactions before you sign them and even create transactions from scratch. You can also configure the method by which keys are encrypted. 
 
