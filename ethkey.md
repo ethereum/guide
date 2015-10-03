@@ -278,5 +278,9 @@ You'll finally get a confirmation that the re-encoding took place; your key is n
 
 ## The Rest
 
-There's much more to discover with `ethkey`; it provides a suite of commands for playing with "bare" secrets (i.e. those not in the wallet), with brain wallets, and allows keys to be imported without actually ever being decrypted. You can alter transactions before you sign them and even create transactions from scratch. You can also configure the method by which keys are encrypted. 
+There's much more to discover with `ethkey`; it provides a suite of commands for playing with "bare" secrets, those not in the wallet (the `listbare`, `newbare`, ... commands), with brain wallets (`newbrain`, `importbrain`, `inspect`), and allows keys to be imported without actually ever being decrypted (`importwithaddress`) and conversion between ICAP and hex (`inspectbare`).
+
+Options allow you to alter transactions before you sign them and even create transactions from scratch. You can also configure the method by which keys are encrypted, changing the encryption function or its parameters.
+
+See `ethkey --help` for more information. Enjoy!
 
