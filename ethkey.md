@@ -76,6 +76,10 @@ Now let's make sure it worked properly by listing the keys in the wallet:
 055dde03-47ff-dded-8950-0fe39b1fa101 0092e965… XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ  test
 ```
 
-It reports one key on each line (for a total of one key here). In this case our key is stored in a file `055dd...` and has an ICAP address beginning `XE472EVK...`. Not especially easy names to remember so rather helpful that it has its proper name, `test`, too.
+It reports one key on each line (for a total of one key here). In this case our key is stored in a file `055dde...` and has an ICAP address beginning `XE472EVK...`. Not especially easy things to remember so rather helpful that it has its proper name, `test`, too.
+
+### Backing up Your Keys
+
+You should always back up your keys! Any backup solution that protects your home directory should also protect your keys (since that's where they live). However for added piece of mind make an explicit backup of your keys by copying the contents of the `~/.web3/keys` (Mac or Linux, or `$HOME/AppData/Web3/keys` for Windows) to an external disk. You might also open the files in a text editor, print them and keep them in a lawyer's safe for additional piece of mind. **If they get lost, nobody can help you!**
 
 
