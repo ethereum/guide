@@ -82,4 +82,32 @@ It reports one key on each line (for a total of one key here). In this case our 
 
 You should always back up your keys! Any backup solution that protects your home directory should also protect your keys (since that's where they live). However for added piece of mind make an explicit backup of your keys by copying the contents of the `~/.web3/keys` (Mac or Linux, or `$HOME/AppData/Web3/keys` for Windows) to an external disk. You might also open the files in a text editor, print them and keep them in a lawyer's safe for additional piece of mind. **If they get lost, nobody can help you!**
 
+### Decoding a Transaction
+
+Here's an unsigned transaction. It authorises the donation of 1 ether to me:
+
+```
+ec80850ba43b74008252089400be78bf8a425471eca0cf1d255118bc080abf95880de0b6b3a7640000801b8080
+```
+
+On its own, it won't do much. We can see this by decoding it in `ethkey`:
+
+```
+> ethkey decode ec80850ba43b74008252089400be78bf8a425471eca0cf1d255118bc080abf95880de0b6b3a7640000801b8080
+Transaction 705d490edc318b50223efa7bb9c19d65f05c3c527e4f8e60535b46a2ed128706
+  type: message
+  to: 00be78bf8a425471eca0cf1d255118bc080abf95
+  data: none
+  from: <unsigned>
+  value: 1 ether (1000000000000000000 wei)
+  nonce: 0
+  gas: 21000
+  gas price: 50 Gwei (50000000000 wei)
+  signing hash: f2790ed53c803ee882c892e1d9715181dfc93780d755fbe4ffefd90701e15c31
+```
+
+
+### Signing a Transaction
+
+Let's test the key by signing a transaction. `ethkey` can be used to sign a pre-existing, but unsigned, transaction (such a thing may be exported from AlethZero, for example). It can also create a transaction and sign it itself. Let's first try the former.
 
