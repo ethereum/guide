@@ -5,9 +5,9 @@
 * [Getting started](getting_started.md)
 * [Mining](mining.md)
 * [Interactive Console](interactive_console.md)
-* [Whisper](whisper.md)
 * CLI Tools
    * [ethkey](ethkey.md)
+* [Whisper](whisper.md)
 * [Mix](mix.md)
    * [Project Editor](project_editor.md)
    * [Scenarios Editor](scenarios_editor.md)
