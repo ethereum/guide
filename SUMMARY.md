@@ -6,6 +6,8 @@
 * [Mining](mining.md)
 * [Interactive Console](interactive_console.md)
 * [Whisper](whisper.md)
+* CLI Tools
+   * ethkey
 * [Mix](mix.md)
    * [Project Editor](project_editor.md)
    * [Scenarios Editor](scenarios_editor.md)
@@ -14,6 +16,4 @@
    * [JavaScript console](javascript_console.md)
    * [Transaction debugger](transaction_debugger.md)
    * [Dapps deployment](dapps_deployment.md)
-* CLI Tools
-   * ethkey
 
