@@ -18,6 +18,14 @@ Beware. You're entering the Frontier!
 16:13:58|  Opened state DB.
 ```
 
+## Using the Testnet
+
+There are two Ethereum "networks": the *mainnet* (the current version of which is called "Frontier") and the *testnet* (currently called "Morden"). They're independent of each other. The only difference between the two is that ether is essentially gratis on the testnet. By default, you'll connect to the mainnet. If you want to connect to the Morden testnet instead, start `eth` with the `--testnet` option instead:
+
+```
+eth console --testnet
+```
+
 ## Setting your Master Password
 
 After this information, the first thing it will do is ask you for a master password.
