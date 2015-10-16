@@ -15,5 +15,6 @@
    * [JavaScript console](javascript_console.md)
    * [Transaction debugger](transaction_debugger.md)
    * [Dapps deployment](dapps_deployment.md)
+   * Code Editor
 * [Whisper](whisper.md)
 
