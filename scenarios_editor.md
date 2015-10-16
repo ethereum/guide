@@ -22,6 +22,9 @@ Rebuild the scenario for the change to become effective.
 
 ###Rebuilding a scenario
 
+Each time a transaction is modified or an account added, the scenario has to be rebuilt for modifications to become effective.
+Note that if a scenario is rebuilt the web frontend (local storage) may also need to be reset (this is not done automatically be Mix). 
+
 ###Creating a transaction
 Let’s get some ether sent to Bob. 
 Create another account named “Bob” with zero ether balance. 
@@ -37,3 +40,18 @@ Rename the scenario
 Modify scenario by specifying transactions that shall be removed
 
 Rebuild the scenario
+
+###Display calls
+
+A contract call is a function invokation. This is not a transaction as a contract call cannot change the state.
+A contract call is not part of the blockchain but for practical and ux design reason, it is convenient to display calls at the same functional level as a transaction. The JS icon warn you that this is not a transaction but a call.
+To show/hide call, click on the menu Scenario -> Display calls.
+
+###Transaction detail
+
+on each transaction click on the arrow on the right corner will expand it and display further information related to the transacations.
+ - Input parameters
+ - Output parameters
+ - Event
+
+It is also possible to edit the transaction (to change parameters for example) or to debug the transactions.
