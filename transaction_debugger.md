@@ -17,9 +17,9 @@ Call data – Transaction or call parameters
 When transaction details are expanded, you can switch to the debugger view by clicking on the "Debug Transaction" button
 
 ##Toggling between debug modes and stepping through transactions
-This opens the Solidity debugging mode. Switch between Solidity and EVM debugging mode using the toggle button  
+This opens the Solidity debugging mode. Switch between Solidity and EVM debugging mode using the Menu button (Debug -> Show VM code)
 
- - Step th ough a transaction in solidity debugging mode
+ - Step through a transaction in solidity debugging mode
 
  - Step through a transaction in EVM debugging mode
 
