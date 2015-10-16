@@ -25,7 +25,8 @@ If a call can be made this will be done by writing:
     contracts["Sample"].contract.get.call()
     
 
-It also possible to use all properties and function of the web3 object
+It also possible to use all properties and function of the web3 object:
+https://github.com/ethereum/wiki/wiki/JavaScript-API
 
 
 
