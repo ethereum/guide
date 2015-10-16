@@ -16,10 +16,16 @@ Check the JavaScript API Reference for further information.
 
 ###Using the JS console to add transactions and local calls
 
-in case the name of the contract is "Sample" with a function named "set", it is possible to make a transaction to call "set" by writing:
-contracts["Sample"].contract.set(14)
-if a call can be made this will be done by writing:
-contracts["Sample"].contract.get.call()
+In case the name of the contract is "Sample" with a function named "set", it is possible to make a transaction to call "set" by writing:
+
+    contracts["Sample"].contract.set(14)
+
+If a call can be made this will be done by writing:
+
+    contracts["Sample"].contract.get.call()
+    
+
+It also possible to use all properties and function of the web3 object
 
 
 
