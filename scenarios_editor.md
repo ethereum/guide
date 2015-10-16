@@ -41,3 +41,10 @@ Modify scenario by specifying transactions that shall be removed
 
 Rebuild the scenario
 
+###Display calls
+
+A contract call is a function invokation. This is not a transaction as a contract call cannot change the state.
+A contract call is not part of the blockchain but for practical and ux design reason, it is convenient to display calls at the same functional level as a transaction. The JS icon warn you that this is not a transaction but a call.
+To show/hide call, click on the menu Scenario -> Display calls.
+
+
