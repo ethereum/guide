@@ -10,4 +10,3 @@ The state shown here is the state resulting of the execution of the selected tra
 ![](state_mix.png)
 
 In that case, 2 contracts are deployed, the selected transaction (deployment of testCtr) is the last one. so the state view shows the storage of both TestCtr and BasicContract.
-
