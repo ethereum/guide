@@ -14,9 +14,10 @@ interface: contract ABI
 
 Check the JavaScript API Reference for further information.
 
-##Using the JS console to access objects
-
-
 ###Using the JS console to add transactions and local calls
+
+in case the name of the contract is "Sample" with a function set, it is possible to make a transaction to call "set" by writting:
+contracts["Sample"].contract.set(14)
+
 
 
