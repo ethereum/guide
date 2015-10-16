@@ -18,6 +18,9 @@ Check the JavaScript API Reference for further information.
 
 in case the name of the contract is "Sample" with a function named "set", it is possible to make a transaction to call "set" by writing:
 contracts["Sample"].contract.set(14)
+if a call can be made this will be done by writing:
+contracts["Sample"].contract.get.call()
+
 
 
 
