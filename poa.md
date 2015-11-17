@@ -133,8 +133,12 @@ You may author the rest of the JSON file as you choose, perhaps altering the `ex
 When ready, you can start one or more nodes with this file (let's assume it is called `myconfig.json` and that you've copied it into each machine's `~` path:
 
 ```
-$ flu --config ~/myconfig.json console
+$ flu console --config ~/myconfig.json
 ```
+
+The `console` specifies that we want to have a Javascript console for interacting with our node (omit it for non-interactive mode) and the `--config` specifies our JSON configuration file.
+
+To begin sealing, use `web3.admin.eth.setMining(true)` at the console. All of the rest of the JS API is available for you.
 
 There are a number of options to help you configure things to your particular situation:
 
@@ -144,8 +148,10 @@ There are a number of options to help you configure things to your particular si
 - `--public-ip` Specify the public IP of this node (i.e. the one that we advertise).
 - `--listen-ip` Specify the IP that we are actually listening on (e.g. the local adaptor IP).
 - `--listen-port` Specify the port which we should listen on.
-- `--chain-name` Specify a custom name for the chain. This alters the `extraData` field of the genesis block away from whatever the JSON config file may have specified. In general don't use this but rather use the JSON config file.
-
+- `--start-sealing` Start sealing blocks immediately.
+- `--jsonrpc` Enable JSON-RPC server on port 8545.
+- `--jsonrpc-port` Enable JSON-RPC server on the given port.
+- `--jsonrpc-cors-domain` Configure the JSON-RPC server's CORS domain.
 
 
 
