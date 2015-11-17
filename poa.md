@@ -153,7 +153,7 @@ There are a number of options to help you configure things to your particular si
 - `--jsonrpc-port` Enable JSON-RPC server on the given port.
 - `--jsonrpc-cors-domain` Configure the JSON-RPC server's CORS domain.
 
-
+By enabling the JSON-RPC server you can use e.g. `ethconsole` to connect to and interact with the private chain.
 
 
 
