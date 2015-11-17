@@ -6,7 +6,7 @@
    * [Getting started](getting_started.md)
    * [Interactive Console](interactive_console.md)
    * [Mining](mining.md)
-   * PoA Private Chains
+   * [PoA Private Chains](poa.md)
    * [ethkey](ethkey.md)
 * [Mix](mix.md)
    * [Project Editor](project_editor.md)
