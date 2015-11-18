@@ -29,11 +29,11 @@ TurboEthereum supports Proof-of-Authority (PoA) private chains through the Fluid
 		"extraData": "0x",
 		"gasLimit": "0x1000000000000"
 	},
-	"alloc": {
-		"0000000000000000000000000000000000000001": { "wei": "1" },
-		"0000000000000000000000000000000000000002": { "wei": "1" },
-		"0000000000000000000000000000000000000003": { "wei": "1" },
-		"0000000000000000000000000000000000000004": { "wei": "1" }
+	"accounts": {
+		"0000000000000000000000000000000000000001": { "wei": "1", "precompiled": { "name": "ecrecover", "linear": { "base": 3000, "word": 0 } } },
+		"0000000000000000000000000000000000000002": { "wei": "1", "precompiled": { "name": "sha256", "linear": { "base": 60, "word": 12 } } },
+		"0000000000000000000000000000000000000003": { "wei": "1", "precompiled": { "name": "ripemd160", "linear": { "base": 600, "word": 120 } } },
+		"0000000000000000000000000000000000000004": { "wei": "1", "precompiled": { "name": "identity", "linear": { "base": 15, "word": 3 } } }
 	},
 	"network": {
 		"nodes": [
@@ -85,15 +85,34 @@ Make sure you own one of these or you'll find it very difficult to append new bl
 This provides additional parameters for the chain's consensus logic. (The difference between parameters and options is too subtle for this guide.) In this case, we're setting allowing a generous gas limit and extra-data field size and otherwise making everything zero. This is fine for most private chains.
 
 ```
-"alloc": {
-	"0000000000000000000000000000000000000001": { "wei": "1" },
-	"0000000000000000000000000000000000000002": { "wei": "1" },
-	"0000000000000000000000000000000000000003": { "wei": "1" },
-	"0000000000000000000000000000000000000004": { "wei": "1" }
+"accounts": {
+		"0000000000000000000000000000000000000001": { "wei": "1", "precompiled": { "name": "ecrecover", "linear": { "base": 3000, "word": 0 } } },
+		"0000000000000000000000000000000000000002": { "wei": "1", "precompiled": { "name": "sha256", "linear": { "base": 60, "word": 12 } } },
+		"0000000000000000000000000000000000000003": { "wei": "1", "precompiled": { "name": "ripemd160", "linear": { "base": 600, "word": 120 } } },
+		"0000000000000000000000000000000000000004": { "wei": "1", "precompiled": { "name": "identity", "linear": { "base": 15, "word": 3 } } }
 },
 ```
 
-This defines any pre-allocated genesis accounts; in this case we're just placing a token value in each of the pre-compiled contracts accounts, standard practice to avoid the first transactor getting stung for using them.
+This defines any accounts that are pre-specified in the genesis block. You can specify the balance, nonce, code and storage of each of the accounts. You can also use the powerful precompiled contract system to place precompiled contracts in each of the accounts together with gas-cost rules.
+
+In this case we're placing a token value in each of the pre-compiled contracts accounts, standard practice to avoid the first transactor getting stung for using them. We're also setting them up similarly to the public network, with each of the four algorithms in the first four slots together with the gas costs from the public network.
+
+Further precompiled contract algorithms can be added through creating and linking a library using the macro `ETH_REGISTER_PRECOMPILED`. For example, to create an algorithm which placed a simple byte-wise XOR checksum of the input into the output:
+
+```
+ETH_REGISTER_PRECOMPILED(identity)(bytesConstRef _in, bytesRef _out)
+{
+	if (_out.size() >= 1)
+	{
+        byte acc = 0;
+        for (unsigned i = 0; i < _in.size(); ++i)
+            acc = acc ^ _in[i];
+        _out[0] = acc;
+	}
+}
+```
+
+
 
 ```
 "network": {
