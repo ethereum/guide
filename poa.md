@@ -100,18 +100,31 @@ In this case we're placing a token value in each of the pre-compiled contracts a
 Further precompiled contract algorithms can be added through creating and linking a library using the macro `ETH_REGISTER_PRECOMPILED`. For example, to create an algorithm which placed a simple byte-wise XOR checksum of the input into the output:
 
 ```
-ETH_REGISTER_PRECOMPILED(identity)(bytesConstRef _in, bytesRef _out)
+ETH_REGISTER_PRECOMPILED(xorchecksum)(bytesConstRef _in, bytesRef _out)
 {
+    // No point doing any computation if there's nowhere to place the result.
 	if (_out.size() >= 1)
 	{
+        // XOR every byte in the input together into the accumulator acc.
         byte acc = 0;
         for (unsigned i = 0; i < _in.size(); ++i)
-            acc = acc ^ _in[i];
+            acc ^= _in[i];
+        // Place the result into the output.
         _out[0] = acc;
 	}
 }
 ```
 
+With this defined, you would be at liberty to name a contract precompiled with:
+
+```
+"precompiled": {
+    "name": "xorchecksum",
+    "linear": { "base": 1, "word": 1 }
+}
+```
+
+You can select the costs (1 gas plus 1 gas for each 32-byte word in the input) as you choose.
 
 
 ```
