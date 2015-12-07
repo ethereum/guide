@@ -19,4 +19,5 @@
    * [Code Editor](code_editor.md)
 * [Whisper](whisper.md)
 * Recipes and How-tos
+   * Cold Wallet Storage Device
 
