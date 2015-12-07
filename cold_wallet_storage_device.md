@@ -10,9 +10,10 @@ The first thing to do is to make sure you've disabled any network connection, wi
 
 ### Generate the keys
 
-The next thing to do is to generate the key (or keys) that this machine will store. Run `ethkey` to make as many keys as you would like to use. You can always make more later. For now I'll make one:
+The next thing to do is to generate the key (or keys) that this machine will store. Run `ethkey` to create a wallet and then again to make as many keys as you would like to use. You can always make more later. For now I'll make one:
 
 ```
+> ethkey createwallet
 > ethkey new supersecret
 ```
 
