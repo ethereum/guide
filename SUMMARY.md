@@ -8,6 +8,7 @@
    * [Mining](mining.md)
    * [PoA Private Chains](poa.md)
    * [ethkey](ethkey.md)
+   * Cold Wallet Device
 * [Mix](mix.md)
    * [Project Editor](project_editor.md)
    * [Scenarios Editor](scenarios_editor.md)
