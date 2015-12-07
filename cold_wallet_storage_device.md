@@ -1,0 +1,2 @@
+# Cold Wallet Storage Device
+
