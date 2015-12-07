@@ -67,6 +67,13 @@ To do this, simply copy the JSON file(s) in your `~/.web3/keys` path to somewher
 
 ```
 > ethkey import /mnt/supersecret.json supersecret
+Enter the passphrase for the key: password
+Enter a hint to help you remember the key's passphrase: just 'password'
+Imported key 055dde03-47ff-dded-8950-0fe39b1fa101
+  Name: supersecret
+  Password hint: just 'password'
+  ICAP: XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ
+  Raw hex: 0092e965928626f8880629cec353d3fd7ca5974f
 ```
 
 A key can only be added to the wallet whose address is known; to figure out the address, `ethkey` will you to type your passphrase.
@@ -79,5 +86,12 @@ To do this, I would remember the "supersecret" account was `XE472EVKU3CGMJF2YQ0J
 
 ```
 > ethkey importwithaddress XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ supersecret
+Enter a hint to help you remember the key's passphrase: just 'password'
+Imported key 055dde03-47ff-dded-8950-0fe39b1fa101
+  Name: supersecret
+  Password hint: just 'password'
+  ICAP: XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ
+  Raw hex: 0092e965928626f8880629cec353d3fd7ca5974f
 ```
 
+In both cases, we'll be able to see the key in e.g. AlethZero as one of our own, though we will not be able to sign with it without entering the passphrase. Assuming you never enter the passphrase on the hot machine (but rather do all signing on the CWSD) then you should be reasonably safe. Just be warned that the security of the secret is lieing on the network security of your hot machine *and* the strength of your key's passphrase. I really wouldn't count on the former.
