@@ -252,6 +252,19 @@ To double-check, we can list the keys:
 
 All restored!
 
+### Importing a key from another client (e.g. Geth)
+
+Because our keys all share the same format it's really easy to import keys from other clients like Geth. In fact it's exactly the same process as restoring a key from a previous backup as we did in the last step.
+
+If we assume we have a geth key at `mygethkey.json`, then to import it to use `eth`, simply use:
+
+```
+> ethkey import mygethkey.json "My Old Geth Key"
+```
+
+It will prompt you for your passphrase to ascertain the address for the key.
+
+
 ### Changing the Password
 
 Security people reckon that it is prudent to change your password regularly. You can do so easily with `ethkey` using the `recode` command (which actually does a whole lot more, but that's advanced usage).
