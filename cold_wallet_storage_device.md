@@ -29,10 +29,55 @@ Created key 055dde03-47ff-dded-8950-0fe39b1fa101
 
 It will prompt for a password and confirmation for both commands. I'm just going to use the password "password" for both.
 
-This "supersecret" key has a raw hex address of `0092e965...`. 
+This "supersecret" key has an address of `XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ`. 
 
 ### Signing with the keys
 
 Signing with the keys can happen in two ways: The first is to export a transaction to sign from e.g. AlethZero, perhaps saving to a USB pendrive. Let's assume that is what we have done and we have the hex-encoded transaction at `/mnt/paygav.tx`.
 
-In order to sign this and place the signed transaction in `/mnt/paygav.signed.tx`, we 
+In order to sign this transaction we just need a single `ethkey` invocation:
+
+```
+> ethkey sign supersecret /tmp/paygav.tx
+```
+
+It will prompt you for the passphrase and finally place the signed hex in a file `/mnt/paygav.tx.signed`. Easy. If we just want to copy and paste the hex (we're too paranoid to use pen drives!) then we would just do:
+
+```
+> echo "<hex-encoded transaction here>" | ethkey sign supersecret
+```
+
+At which it will ask for your passphrase and spit out the hex of the signed transaction.
+
+Alternatively, if we don't yet have an unsigned transaction, but we actually want to construct a transactions locally, we can do that too.
+
+Let's assume our "supersecret" account has received some ether in the meantime and we want to pay somebody 2.1 grand of this ether (2100 ether for those not used to my English colloquialisms). That's easy, too.
+
+```
+> ethkey sign supersecret --tx-dest <destination address> --tx-gas 55000 --tx-gasprice 50000000000 --tx-value 2100000000000000000 --tx-nonce 0
+```
+
+Note the `--tx-value` (the amount to transfer) and the `--tx-gasprice` (the price we pay for a single unit of gas) must be specified in Wei, hence the large numbers there. `--tx-nonce` only needs to be specified if it's not the first transaction sent from this account.
+
+### Importing the key
+
+You may want to eventually import the key to your everyday device. This may be to use it directly there or simply to facilitate the creation of unsigned transactions for later signing on the CWSD. Assuming you have a strong passphrase, importing the key on to a hot device itself should not compromise the secret's safety too much (though obviously it's materially less secure than being on a physically isolated machine).
+
+To do this, simply copy the JSON file(s) in your `~/.web3/keys` path to somewhere accessible on your other (non-CWSD) computer. Let's assume this other computer now has our "supersecret" key at `/mnt/supersecret.json`. There are two ways of importing it into your Ethereum wallet. The first is simplest:
+
+```
+> ethkey import /mnt/supersecret.json supersecret
+```
+
+A key can only be added to the wallet whose address is known; to figure out the address, `ethkey` will you to type your passphrase.
+
+This is less than ideal since if the machine is actually compromised (perhaps with a keylogger), then an attacker could slurp up your passphrase and key JSON and be able to fraudulently use that account as they pleased. Ouch.
+
+A more secure way, especially if you're not planning on using the key directly from this hot machine in the near future, is to provide the address manually on import. It won't ask you for the passphrase and thus potentially compromise the secret's integrity (assuming the machine is actually compromised in the first place!).
+
+To do this, I would remember the "supersecret" account was `XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ` and tell `ethkey` as such while importing:
+
+```
+> ethkey importwithaddress XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ supersecret
+```
+
