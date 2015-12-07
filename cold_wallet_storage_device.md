@@ -14,6 +14,7 @@ The next thing to do is to generate the key (or keys) that this machine will sto
 
 ```
 > ethkey createwallet
+Please enter a MASTER passphrase to protect your key store (make it strong!): 
 > ethkey new supersecret
 ```
 
