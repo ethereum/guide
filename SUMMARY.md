@@ -8,7 +8,6 @@
    * [Mining](mining.md)
    * [PoA Private Chains](poa.md)
    * [ethkey](ethkey.md)
-   * Cold Wallet Device
 * [Mix](mix.md)
    * [Project Editor](project_editor.md)
    * [Scenarios Editor](scenarios_editor.md)
@@ -19,5 +18,6 @@
    * [Dapps deployment](dapps_deployment.md)
    * [Code Editor](code_editor.md)
 * [Whisper](whisper.md)
+* Cold Wallet Device
 * Recipes and How-tos
 
