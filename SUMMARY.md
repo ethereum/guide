@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [Installation](chapter1.md)
-* CLI Tools
+* [CLI Tools](cli_tools.md)
    * [Getting started](getting_started.md)
    * [Interactive Console](interactive_console.md)
    * [Mining](mining.md)
