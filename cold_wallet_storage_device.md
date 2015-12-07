@@ -14,8 +14,25 @@ The next thing to do is to generate the key (or keys) that this machine will sto
 
 ```
 > ethkey createwallet
-Please enter a MASTER passphrase to protect your key store (make it strong!): 
+Please enter a MASTER passphrase to protect your key store (make it strong!): password
+Please confirm the passphrase by entering it again: password
 > ethkey new supersecret
+Enter a passphrase with which to secure this account (or nothing to use the master passphrase): password
+Please confirm the passphrase by entering it again: password
+Enter a hint to help you remember this passphrase: just 'password'
+Created key 055dde03-47ff-dded-8950-0fe39b1fa101
+  Name: supersecret
+  Password hint: just 'password'
+  ICAP: XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ
+  Raw hex: 0092e965928626f8880629cec353d3fd7ca5974f
 ```
 
-It will prompt for a password and 
+It will prompt for a password and confirmation for both commands. I'm just going to use the password "password" for both.
+
+This "supersecret" key has a raw hex address of `0092e965...`. 
+
+### Signing with the keys
+
+Signing with the keys can happen in two ways: The first is to export a transaction to sign from e.g. AlethZero, perhaps saving to a USB pendrive. Let's assume that is what we have done and we have the hex-encoded transaction at `/mnt/paygav.tx`.
+
+In order to sign this and place the signed transaction in `/mnt/paygav.signed.tx`, we 
