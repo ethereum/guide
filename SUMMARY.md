@@ -19,4 +19,5 @@
    * [Dapps deployment](dapps_deployment.md)
    * [Code Editor](code_editor.md)
 * [Whisper](whisper.md)
+* Recipes and How-tos
 
