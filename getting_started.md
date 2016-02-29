@@ -34,7 +34,7 @@ After this information, the first thing it will do is ask you for a master passw
 Please enter a MASTER password to protect your key store (make it strong!):
 ```
 
-The master password is a password that protects your privacy and acts as a default security measure for your various Ethereum identities. Even with access to your computer nobody can work out who your online Ethereum addresses are without this password. It's also a default security password for your other keys, if you don't want to be remembering too many password. Anyway, it's the first line of defence and aught to be strong.
+The master password is a password that protects your privacy and acts as a default security measure for your various Ethereum identities. Even with access to your computer nobody can work out who your online Ethereum addresses are without this password. It's also a default security password for your other keys, if you don't want to be remembering too many password. Anyway, it's the first line of defence and ought to be strong.
 
 Enter a password, preferably taking into account [sage advice on password creation](https://xkcd.com/936/). Then when it asks for a confirmation...
 
@@ -48,7 +48,7 @@ It will pause shortly while it figures out your network environment and starts i
 
 ## Your First Account
 
-This is your newly created default account (or 'identity'. I use the words interchangeably). In my case, it was the account that begins with `XE712F44`. This is an *ICAP code*, similar to an IBAN code that you might have used when doing banking transfers. You and only you have the special *secret key* for this account. It's guarded by the password you just typed. Don't ever tell anyone your password or they'll be able to send ether from this account and use it for nefarious means.
+This is your newly created default account (or 'identity', I use the words interchangeably). In my case, it was the account that begins with `XE712F44`. This is an *ICAP code*, similar to an IBAN code that you might have used when doing banking transfers. You and only you have the special *secret key* for this account. It's guarded by the password you just typed. Don't ever tell anyone your password or they'll be able to send ether from this account and use it for nefarious means.
 
 ```
 Transaction Signer: XE712F44QOZBKNLD20DLAEE8O2YJ7XRGP4 (be5af9b0-9917-b9bc-8f95-65cb9f042052 - 0093503f)
@@ -57,7 +57,7 @@ Mining Beneficiary: XE712F44QOZBKNLD20DLAEE8O2YJ7XRGP4 (be5af9b0-9917-b9bc-8f95-
 
 `eth` is nice. It tells you that any transactions you do will come from your account beginning with `XE712F44`. Similarly by default, if you mine successfully with the inbuilt miner, the proceeds will go into the same account.
 
-You'll notice that there are two other codes in parentheses. The first is the *UUID* of the key. This is a code, only used on your computer, which allows us to identify which file the key is stored in without giving any any information of what account the key is for. In this case, the UUID begins with `be5af9b0`. 
+You'll notice that there are two other codes in parentheses. The first is the *UUID* of the key. This is a code, only used on your computer, which allows us to identify which file the key is stored in without giving any information of what account the key is for. In this case, the UUID begins with `be5af9b0`. 
 
 The second piece of information that is parenthesised is the first few digits of the hex key. Older clients and Ethereum software depend on this to identify accounts. We don't use it any more because it's longer and doesn't have any way of determining if an address is invalid, so errors with mistyping can easily have major consequences.
 
