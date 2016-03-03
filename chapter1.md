@@ -58,7 +58,7 @@ Wait for it to reboot and you'll be running a node.
 
 # Installing on OS X and Homebrew
 
-If you want the full suite of CLI tools, include `eth` and `ethminer`, you'll need [Homebrew](brew.sh). 
+If you want the full suite of CLI tools, including `eth` and `ethminer`, you'll need [Homebrew](brew.sh). 
 
 Once you've got Homebrew installed, tap the ethereum brew:
 ```
